@@ -1,3 +1,23 @@
 h1 {
   color: red;
 }
+.body {
+  background-color: black;
+  color: white;
+}
+.list {
+  padding: 10px;
+  border: solid rgba(0, 0, 0, 0.08) 1px;
+
+  background-color: rgb(41, 127, 248);
+}
+.ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.div.detail {
+  display: flex;
+}
+.div.detail-2 {
+  flex-direction: column;
+}
