@@ -6,7 +6,7 @@ const getDataFromAPI = () => {
           return {
             name: user.name,
             status: user.status,
-            id: user.id,
+            id: crypto.randomUUID(),
             species: user.species,
             image: user.image,
             

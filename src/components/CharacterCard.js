@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 function CharacterCard(props) {
     return (
+      <Link to={`/user/${props.user.id}`}>
       <li key={props.user.id} className='list'>
            <img
           className="card__img"
@@ -15,6 +18,7 @@ function CharacterCard(props) {
           <p>Su identificador especial es {props.user.id}</p>
           
       </li>
+      </Link>
     );
   }
   export default CharacterCard;

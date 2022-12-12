@@ -32,6 +32,10 @@ function App() {
 
 .filter((character) => { return filterSpecies === 'Todos' ? true : character.species === filterSpecies;})
 .filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase()) );
+
+const findCharacter= (id) => {
+  return data.find((character)=>character.id === id);
+}
   return (
     <div >
       <Header></Header>
@@ -47,7 +51,7 @@ function App() {
       }>
 
         </Route>
-        <Route path="/user/:userId" element={<CharacterDetail />} ></Route>
+        <Route path="/user/:id" element={<CharacterDetail findCharacter={findCharacter}/>} ></Route>
       </Routes>
 
       </main>
