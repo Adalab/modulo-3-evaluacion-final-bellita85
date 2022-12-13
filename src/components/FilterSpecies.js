@@ -4,6 +4,8 @@ const FilterSpecies = (props) => {
     
     };
         return (
+          <form onSubmit={props.handleOnSubmit}>  
+          <label> Busqueda por Especie </label>
            <select className='select'
            name='house'
            id='species'
@@ -13,6 +15,7 @@ const FilterSpecies = (props) => {
               <option value="Human">Humanos</option>
               <option value="Alien">Aliens</option>
              </select> 
+             </form>
         );
       };
       export default FilterSpecies;

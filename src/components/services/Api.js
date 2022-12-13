@@ -9,6 +9,8 @@ const getDataFromAPI = () => {
             id: crypto.randomUUID(),
             species: user.species,
             image: user.image,
+            origin: user.origin.name,
+            episode: user.episode,
             
           };
         });

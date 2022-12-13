@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 
 function CharacterCard(props) {
     return (
-      <Link to={`/user/${props.user.id}`}>
-      <li key={props.user.id} className='list'>
+      <Link to={`/user/${props.filterCharacter.id}`}>
+      <li className='list'>
            <img
           className="card__img"
-          src={props.user.image}
-          alt={`Foto de ${props.user.name}`}
-          title={`Foto de ${props.user.name}`}
+          src={props.filterCharacter.image}
+          alt={`Foto de ${props.filterCharacter.name}`}
+          title={`Foto de ${props.filterCharacter.name}`}
         />
           <h3>
-            {props.user.name} 
+            {props.filterCharacter.name} 
           </h3>
-          <h4> {props.user.species} </h4>
-          <h4> {props.user.status} </h4>
-          <p>Su identificador especial es {props.user.id}</p>
+          <h4> {props.filterCharacter.species} </h4>
+          <h4> {props.filterCharacter.status} </h4>
+          <p>Su identificador especial es {props.filterCharacter.id}</p>
           
       </li>
       </Link>

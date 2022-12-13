@@ -3,10 +3,10 @@ import FilterName from './FilterName';
 const Filter = (props) => {
 
     return (
-      <form>
-        <FilterSpecies handleFilterSpecie={props.handleFilterSpecie}></FilterSpecies>
-        <FilterName handleFilterName={props.handleFilterName}></FilterName>
-      </form>
+      <>
+        <FilterSpecies handleFilterSpecie={props.handleFilterSpecie} filterSpecies={props.filterSpecies} handleOnSubmit={props.handleOnSubmit}></FilterSpecies>
+        <FilterName handleFilterName={props.handleFilterName}  filterName={props.filterName} handleOnSubmit={props.handleOnSubmit}></FilterName>
+      </>
     );
   };
   
