@@ -38,7 +38,7 @@ const CharacterDetail = (props) => {
                 autoComplete="off"
                 type="text"
                 name="search"
-                value={`/user/${charactersFound.id}`}
+                value={`beta.adalab.es/modulo-3-evaluacion-final-bellita85/#/user/${charactersFound.id}`}
                 readOnly
               />
             </form>
