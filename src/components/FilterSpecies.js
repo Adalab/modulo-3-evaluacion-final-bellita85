@@ -4,7 +4,7 @@ const FilterSpecies = (props) => {
     
     };
         return (
-          <form onSubmit={props.handleOnSubmit}>  
+          <form className="form-detail-2" onSubmit={props.handleOnSubmit}>  
           <label> Busqueda por Especie </label>
            <select className='select'
            name='house'

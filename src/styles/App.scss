@@ -6,14 +6,18 @@ h1 {
   color: white;
 }
 .list {
-  padding: 10px;
   border: solid rgba(0, 0, 0, 0.08) 1px;
-
-  background-color: rgb(41, 127, 248);
+  list-style: none;
+  background-color: aquamarine;
+  color: black;
 }
 .ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  text-decoration: none;
+  gap: 10px;
+  color: black;
+  padding: 40px;
 }
 .div.detail {
   display: flex;
@@ -34,10 +38,19 @@ h1 {
   padding: 30px;
   gap: 10px;
 }
+.form-detail-2 {
+  text-align: center;
+  padding: 10px;
+  gap: 10px;
+}
 .nav {
   text-align: center;
   font-size: large;
   text-decoration: none;
   outline: none;
   color: white;
+}
+.card_img {
+  padding-top: 10px;
+  width: 60%;
 }

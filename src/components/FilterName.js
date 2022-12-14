@@ -4,10 +4,10 @@ const FilterName = (props) => {
    
     };
       return (
-        <form onSubmit={props.handleOnSubmit}>  
-        <label> Busqueda por Nombre </label>
+        <form className="form-detail-2" onSubmit={props.handleOnSubmit}>  
+        <label className="input_filter"> Busqueda por Nombre </label>
         <input
-        className="header__search"
+        className="input_name"
         autoComplete="off"
         type="search"
         name="search"

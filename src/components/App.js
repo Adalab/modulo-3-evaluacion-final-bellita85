@@ -68,7 +68,6 @@ function App() {
                   filterCharacter={filterCharacter}
                   filterName={filterName}
                 >
-                  {' '}
                 </CharacterList>
               </>
             }
