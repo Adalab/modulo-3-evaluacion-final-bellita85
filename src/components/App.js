@@ -9,9 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail';
 
-
 // import FilterSpecies from './FilterSpecies';
-
 
 function App() {
   const [data, setData] = useState([]);
@@ -19,57 +17,72 @@ function App() {
   const [filterName, setFilterName] = useState('');
 
   useEffect(() => {
-    
     getDataFromAPI().then((cleanData) => {
       setData(cleanData);
-     
     });
   }, []);
   const handleOnSubmit = (ev) => {
     ev.preventDefault();
-  }
-  const handleFilterSpecie = ( value) => {
+  };
+  const handleFilterSpecie = (value) => {
     setFilterSpecies(value);
   };
-  const handleFilterName = ( value) => {
+  const handleFilterName = (value) => {
     setFilterName(value);
   };
-  
+
   const filterCharacter = data
-  .filter ((character)=> character.species === filterSpecies || filterSpecies === 'Todos' )
+    .filter(
+      (character) =>
+        character.species === filterSpecies || filterSpecies === 'Todos'
+    )
 
-.filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase()) || filterName === '' );
- 
+    .filter(
+      (character) =>
+        character.name.toLowerCase().includes(filterName.toLowerCase()) ||
+        filterName === ''
+    );
 
-const findCharacter= (id) => {
-  return data.find((character)=>character.id === id);
-}
+  const findCharacter = (id) => {
+    return data.find((character) => character.id === parseInt(id));
+  
+  };
+
   return (
-    <div >
+    <div>
       <Header></Header>
       <main>
         <Routes>
-          <Route path='/' element={ 
-            <>
-        <Filter 
-        handleFilterSpecie={handleFilterSpecie}
-         handleFilterName={handleFilterName}
-        handleOnSubmit={handleOnSubmit}
-        filterName={filterName}
-        filterSpecies={filterSpecies}
-    >
-         </Filter>
-        <CharacterList 
-        filterCharacter={filterCharacter} filterName={filterName} > </CharacterList>
-        </>
-      }>
-
-        </Route>
-        <Route path="/user/:id" element={<CharacterDetail findCharacter={findCharacter}/>} ></Route>
-      </Routes>
-
+          <Route
+            path="/"
+            element={
+              <>
+                <Filter
+                  handleFilterSpecie={handleFilterSpecie}
+                  handleFilterName={handleFilterName}
+                  handleOnSubmit={handleOnSubmit}
+                  filterName={filterName}
+                  filterSpecies={filterSpecies}
+                ></Filter>
+                <CharacterList
+                  filterCharacter={filterCharacter}
+                  filterName={filterName}
+                >
+                  {' '}
+                </CharacterList>
+              </>
+            }
+          ></Route>
+          <Route
+            path="/user/:id"
+            element={<CharacterDetail
+               findCharacter={findCharacter} 
+               filterCharacter={filterCharacter} 
+               handleOnSubmit={handleOnSubmit}/>}
+          ></Route>
+        </Routes>
       </main>
-       </div>
+    </div>
   );
 }
 

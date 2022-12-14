@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 function CharacterCard(props) {
+  
     return (
       <Link to={`/user/${props.filterCharacter.id}`}>
       <li className='list'>

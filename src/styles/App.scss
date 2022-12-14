@@ -18,6 +18,26 @@ h1 {
 .div.detail {
   display: flex;
 }
-.div.detail-2 {
+.div-detail-2 {
+  background-color: aquamarine;
+  padding: 30px;
+  color: black;
+}
+.article {
+  display: flex;
+  justify-content: center;
+}
+
+.form-detail {
+  display: flex;
   flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+}
+.nav {
+  text-align: center;
+  font-size: large;
+  text-decoration: none;
+  outline: none;
+  color: white;
 }
