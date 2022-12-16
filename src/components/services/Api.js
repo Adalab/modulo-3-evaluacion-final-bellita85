@@ -11,6 +11,8 @@ const getDataFromAPI = () => {
             image: user.image,
             origin: user.origin.name,
             episode: user.episode,
+            gender: user.gender,
+        
             
           };
         });

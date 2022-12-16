@@ -15,6 +15,7 @@ function App() {
   const [data, setData] = useState([]);
   const [filterSpecies, setFilterSpecies] = useState('Todos');
   const [filterName, setFilterName] = useState('');
+  const [filterGender, setFilterGender] = useState('Todos');
 
   useEffect(() => {
     getDataFromAPI().then((cleanData) => {
@@ -30,6 +31,10 @@ function App() {
   const handleFilterName = (value) => {
     setFilterName(value);
   };
+  const handleFilterGender = (value) => {
+    setFilterGender(value);
+  };
+  
 
   const filterCharacter = data
     .filter(
@@ -41,7 +46,12 @@ function App() {
       (character) =>
         character.name.toLowerCase().includes(filterName.toLowerCase()) ||
         filterName === ''
-    );
+    ) 
+    .filter(
+      (character) =>
+        character.gender === filterGender || filterGender === 'Todos'
+    )
+    
 
   const findCharacter = (id) => {
     return data.find((character) => character.id === parseInt(id));
@@ -54,8 +64,7 @@ function App() {
       <main>
         <Routes>
           <Route
-            path="/"
-            element={
+            path="/" element={
               <>
                 <Filter
                   handleFilterSpecie={handleFilterSpecie}
@@ -63,6 +72,9 @@ function App() {
                   handleOnSubmit={handleOnSubmit}
                   filterName={filterName}
                   filterSpecies={filterSpecies}
+                  handleFilterGender={handleFilterGender}
+                  filterGender={filterGender}
+              
                 ></Filter>
                 <CharacterList
                   filterCharacter={filterCharacter}
